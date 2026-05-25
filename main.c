@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <string.h> 
 
-#define LAXOS_VERSION   "0.4"   
+#define LAXOS_VERSION   "0.6"   
 #define LAXOS_RAM_MB    12288
 #define LAXOS_CPU_CORES 8
 
@@ -39,7 +39,7 @@ void verificar_sistema() {
         printf("CPU: ADVERTENCIA - pocos nucleos\n");
     }
     
-    if (strcmp(LAXOS_VERSION, "0.4") == 0) {
+    if (strcmp(LAXOS_VERSION, "0.6") == 0) {
         printf("Version: OK\n");
     } else {
         printf("Version: desactualizada\n");
@@ -69,6 +69,26 @@ void escanear_memoria() {
     }
 }
 
+void gestionar_memoria() {
+    int ram_total = LAXOS_RAM_MB;
+    int* ptr_ram  = &ram_total;
+
+    printf("=================================\n");
+    printf("Gestor de memoria LaxOS\n");
+    printf("Valor RAM: %d MB\n", ram_total);
+    printf("Direccion en memoria: %p\n", ptr_ram);
+    printf("Valor via puntero: %d MB\n", *ptr_ram);
+
+    *ptr_ram = *ptr_ram - 512;
+    printf("RAM disponible para juegos: %d MB\n", ram_total);
+
+    int cores_total = LAXOS_CPU_CORES;
+    int* ptr_cores  = &cores_total;
+    *ptr_cores = *ptr_cores - 2;
+    printf("Nucleos para juegos: %d\n", cores_total);
+    printf("=================================\n");
+}
+
 void laxos_init() {
     printf("=================================\n");
     mostrar_bienvenida();
@@ -76,7 +96,8 @@ void laxos_init() {
     mostrar_hardware();
     verificar_sistema();
     escanear_nucleos();    
-    escanear_memoria();    
+    escanear_memoria(); 
+    gestionar_memoria();   
     printf("Estado: Sistema listo\n");
     printf("=================================\n");
 }
