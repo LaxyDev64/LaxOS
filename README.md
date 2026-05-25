@@ -9,11 +9,11 @@
 
 ## Estado del proyecto
 
-[████████░░] 80% — Kernel base
-[████░░░░░░] 40% — Gestión de memoria
-[          ] Sistema de archivos
-[          ] Gestión de procesos
-[          ] Interfaz de usuario
+[████████░░] 80% — Kernel base                                                                                        
+[████░░░░░░] 40% — Gestión de memoria                                                                          
+[          ] Sistema de archivos                                                           
+[          ] Gestión de procesos                                                             
+[          ] Interfaz de usuario                                                                      
 
 ---
 
