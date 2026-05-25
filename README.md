@@ -9,11 +9,11 @@
 
 ## Estado del proyecto
 
-[██████░░░░] 60% — Kernel base completo  
-[ ] Punteros y memoria dinámica  
-[ ] Sistema de archivos  
-[ ] Gestión de procesos  
-[ ] Interfaz de usuario  
+[████████░░] 80% — Kernel base
+[████░░░░░░] 40% — Gestión de memoria
+[          ] Sistema de archivos
+[          ] Gestión de procesos
+[          ] Interfaz de usuario
 
 ---
 
@@ -38,11 +38,13 @@ gcc main.c -o laxos && ./laxos
 
 ## Versiones
 
-- **v0.5** — Escaneo de CPU y memoria
-- **v0.4** — Verificación del sistema
-- **v0.3** — Funciones base
-- **v0.1** — Primer arranque
-
+| Versión | Descripción |
+|---------|-------------|
+| v0.6 | Gestión de memoria con punteros |
+| v0.5 | Escaneo de CPU y RAM |
+| v0.4 | Verificación de hardware |
+| v0.3 | Funciones base |
+| v0.1 | Primer arranque 
 ---
 
 ## Creado y Desarrollado por LaxyDev64
