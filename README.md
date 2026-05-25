@@ -1,5 +1,5 @@
 # LaxOS
-[██████░░░░] 60% — Kernel base completo
+[██████░░░░] 60% — Kernel base completo                                                                                                                                       
 [ ] Punteros y memoria dinámica
 [ ] Sistema de archivos
 [ ] Gestión de procesos
