@@ -8,11 +8,11 @@
 ---
 
 ## Estado del proyecto
-[██████████] 100% — Kernel base                                                                                   
-[████░░░░░░]  40% — Gestión de memoria                                                                          
-[██░░░░░░░░]  20% — Gestión de procesos                                                                             
-[          ]       — Sistema de archivos                                                                  
-[          ]       — Interfaz de usuario                                                                    
+[██████████] 100% — Kernel base                                                                                                                                                            
+[██████░░░░]  60% — Gestión de memoria                                                                                        
+[████░░░░░░]  40% — Gestión de procesos                                                                                        
+[          ]       — Sistema de archivos                                                                                  
+[          ]       — Interfaz de usuario                                                                                                                             
 ---
 
 ##  Especificaciones objetivo
