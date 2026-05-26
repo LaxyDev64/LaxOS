@@ -52,4 +52,6 @@ gcc main.c -o laxos && ./laxos
 | v0.1 | Primer arranque 
 ---
 
-## Creado y Desarrollado por LaxyDev64
+## Creado y Desarrollado por LaxyDev64 and LaxStudios
+LaxStudio It's an indie studio created by LaxyDev64; studio Discord coming soon.
+Don't confuse it with anything else :)
