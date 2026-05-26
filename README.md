@@ -33,7 +33,7 @@
 ## Cómo compilar
 
 ```bash
-gcc main.c -o laxos && ./laxos
+gcc main.c kernel.c memory.c process.c shell.c filesystem.c ui.c -o laxos && ./laxos
 ```
 
 ---
