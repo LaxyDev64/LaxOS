@@ -11,12 +11,12 @@
 
 | Módulo | Progreso |
 |--------|----------|
-| Kernel base | ██████████ 100% |
-| Gestión de memoria | ██████░░░░ 60% |
-| Gestión de procesos | ████░░░░░░ 40% |
-| Shell básica | ██████████ 100% |
-| Sistema de archivos | ░░░░░░░░░░ 0% |
-| Interfaz de usuario | ░░░░░░░░░░ 0% |                                                                                                                             
+| — Kernel base | [██████████] 100% |
+| — Gestión de memoria | [██████░░░░]  60% |
+| — Gestión de procesos | [████░░░░░░]  40% |
+| — Shell básica | [██████████] 100% |
+| — Sistema de archivos | [██████████] 100% |
+| — Interfaz de usuario | [          ]    0% |                                                                                                                         
 ---
 
 ##  Especificaciones objetivo
@@ -42,6 +42,7 @@ gcc main.c -o laxos && ./laxos
 
 | Versión | Descripción |
 |---------|-------------|
+| v0.7.23 | sistema de archivos añadidos |
 | v0.7.1 | shell añadido |
 | v0.7 | LaxOS ahora tiene una tabla de procesos real yey :) |
 | v0.6 | Gestión de memoria con punteros |
