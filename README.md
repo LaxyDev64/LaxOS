@@ -8,13 +8,11 @@
 ---
 
 ## Estado del proyecto
-
-[████████░░] 80% — Kernel base                                                                                        
-[████░░░░░░] 40% — Gestión de memoria                                                                          
-[          ] Sistema de archivos                                                           
-[          ] Gestión de procesos                                                             
-[          ] Interfaz de usuario                                                                      
-
+[██████████] 100% — Kernel base                                                                                   
+[████░░░░░░]  40% — Gestión de memoria                                                                          
+[██░░░░░░░░]  20% — Gestión de procesos                                                                             
+[          ]       — Sistema de archivos                                                                  
+[          ]       — Interfaz de usuario                                                                    
 ---
 
 ##  Especificaciones objetivo
@@ -40,6 +38,7 @@ gcc main.c -o laxos && ./laxos
 
 | Versión | Descripción |
 |---------|-------------|
+| v0.7 | LaxOS ahora tiene una tabla de procesos real yey :) |
 | v0.6 | Gestión de memoria con punteros |
 | v0.5 | Escaneo de CPU y RAM |
 | v0.4 | Verificación de hardware |
