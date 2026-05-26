@@ -42,7 +42,7 @@ gcc main.c kernel.c memory.c process.c shell.c filesystem.c ui.c -o laxos && ./l
 
 | Versión | Descripción |
 |---------|-------------|
-| v0.7.23 | sistema de archivos añadidos |
+| v0.7.2 | sistema de archivos añadidos |
 | v0.7.1 | shell añadido |
 | v0.7 | LaxOS ahora tiene una tabla de procesos real yey :) |
 | v0.6 | Gestión de memoria con punteros |
