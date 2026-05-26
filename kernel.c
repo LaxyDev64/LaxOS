@@ -11,4 +11,5 @@ void laxos_init() {
     mostrar_procesos();
     printf("Estado: Sistema listo\n");
     printf("=================================\n");
+    laxos_shell();
 }
