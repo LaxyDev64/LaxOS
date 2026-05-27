@@ -14,9 +14,9 @@
 | — Kernel base | [██████████] 100% |
 | — Gestión de memoria | [██████░░░░]  60% |
 | — Gestión de procesos | [████░░░░░░]  40% |
-| — Shell básica | [██████████] 100% |
+| — Shell | [██████████] 100% |
 | — Sistema de archivos | [██████████] 100% |
-| — Interfaz de usuario | [          ]    0% |                                                                                                                         
+| — Interfaz de usuario | [██████████] 100% |                                                                                                                    
 ---
 
 ##  Especificaciones objetivo
@@ -42,7 +42,7 @@ gcc main.c kernel.c memory.c process.c shell.c filesystem.c ui.c -o laxos && ./l
 
 | Versión | Descripción |
 |---------|-------------|
-| v0.8 | coming soon |
+| v0.8 | ¡LaxOS con interfaz completa! |
 | v0.7.2 | sistema de archivos añadidos |
 | v0.7.1 | shell añadido |
 | v0.7 | LaxOS ahora tiene una tabla de procesos real yey :) |
