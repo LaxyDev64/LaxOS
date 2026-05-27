@@ -9,7 +9,8 @@ void laxos_init() {
     printf("RAM: %d MB\n", LAXOS_RAM_MB);
     gestionar_memoria();
     mostrar_procesos();
+    laxos_filesystem_init();
     printf("Estado: Sistema listo\n");
     printf("=================================\n");
-    laxos_shell();
+    laxos_ui_menu();
 }

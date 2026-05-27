@@ -19,6 +19,7 @@ void laxos_shell() {
             printf("  info     - informacion del sistema\n");
             printf("  procesos - lista de procesos\n");
             printf("  memoria  - estado de la memoria\n");
+            printf("  leer     - leer archivo laxos.cfg\n");
             printf("  salir    - apagar LaxOS\n");
 
         } else if (strcmp(comando, "info") == 0) {
@@ -31,6 +32,9 @@ void laxos_shell() {
 
         } else if (strcmp(comando, "memoria") == 0) {
             gestionar_memoria();
+
+        } else if (strcmp(comando, "leer") == 0) {
+            laxos_leer("laxos.cfg");
 
         } else if (strcmp(comando, "salir") == 0) {
             printf("Apagando LaxOS...\n");
