@@ -16,7 +16,8 @@
 | — Gestión de procesos | [████░░░░░░]  40% |
 | — Shell | [██████████] 100% |
 | — Sistema de archivos | [██████████] 100% |
-| — Interfaz de usuario | [██████████] 100% |                                                                                                                    
+| — Interfaz de usuario (terninal) | [██████████] 100% |   
+| — Interfaz interactiva | [░░░░░░░░░░]  00% |
 ---
 
 ##  Especificaciones objetivo
@@ -25,7 +26,7 @@
 |-----------|---------|
 | CPU | 8 núcleos ARM Cortex-A78C |
 | RAM | 12288 MB LPDDR5X |
-| Arquitectura | ARM 64-bit |
+| Arquitectura | ARM 64-bit-x86y64|
 | Lenguaje | C |
 
 ---
@@ -43,6 +44,7 @@ gcc main.c kernel.c memory.c process.c shell.c filesystem.c ui.c -o laxos && ./l
 | Versión | Descripción |
 |---------|-------------|
 | v0.8 | ¡LaxOS con interfaz completa! |
+| v0.7.3 | agregado mas arquitectora para mas consolas/pc |
 | v0.7.2 | sistema de archivos añadidos |
 | v0.7.1 | shell añadido |
 | v0.7 | LaxOS ahora tiene una tabla de procesos real yey :) |
