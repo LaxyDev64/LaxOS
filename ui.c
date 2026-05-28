@@ -1,6 +1,7 @@
 // ui.c - Interfaz de usuario de LaxOS
 #include "kernel.h"
 #include <time.h>
+#include <stdlib.h>
 
 void laxos_ui_clock() {
     time_t t = time(NULL);
@@ -40,43 +41,49 @@ void laxos_ui_barra() {
 void laxos_ui_menu() {
     int opcion;
 
-    laxos_ui_header();
-    laxos_ui_juegos();
-    laxos_ui_barra();
-
+    while (1) {
+        system("cls");
+        laxos_ui_header();
+        laxos_ui_juegos();
+        laxos_ui_barra();
+   char cmd[20];
     printf("\n  Selecciona: ");
-    scanf("%d", &opcion);
+    fflush(stdout);
+    scanf("%s", cmd);
 
-    switch (opcion) {
-        case 1:
-            printf("\n  >> Juegos: Sonic | Pac-Man | Rayman | DOOM\n");
-            laxos_ui_menu();
-            break;
-        case 2:
-            printf("\n  >> Tienda: proximamente...\n");
-            laxos_ui_menu();
-            break;
-        case 3:
-            printf("\n  >> Albumes: proximamente...\n");
-            laxos_ui_menu();
-            break;
-        case 4:
-            laxos_leer("laxos.cfg");
-            laxos_ui_menu();
-            break;
-        case 5:
-            printf("\n  >> Sistema:\n");
-            printf("  LaxOS v%s\n", LAXOS_VERSION);
-            printf("  CPU: %d nucleos ARM\n", LAXOS_CPU_CORES);
-            printf("  RAM: %d MB\n", LAXOS_RAM_MB);
-            laxos_ui_menu();
-            break;
-        case 6:
-            printf("\n  Apagando LaxOS...\n");
-            printf("  Hasta luego!\n\n");
-            break;
-        default:
-            printf("\n  Opcion no valida\n");
-            laxos_ui_menu();
+    if      (strcmp(cmd,"1")==0 || strcmp(cmd,"juegos")==0)  opcion = 1;
+    else if (strcmp(cmd,"2")==0 || strcmp(cmd,"tienda")==0)  opcion = 2;
+    else if (strcmp(cmd,"3")==0 || strcmp(cmd,"albumes")==0) opcion = 3;
+    else if (strcmp(cmd,"4")==0 || strcmp(cmd,"config")==0)  opcion = 4;
+    else if (strcmp(cmd,"5")==0 || strcmp(cmd,"ajuste")==0)  opcion = 5;
+    else if (strcmp(cmd,"6")==0 || strcmp(cmd,"apagar")==0)  opcion = 6;
+    else opcion = -1;
+    
+        switch (opcion) {
+            case 1:
+                printf("\n  >> Juegos: Sonic | Pac-Man | Rayman | DOOM\n");
+                break;
+            case 2:
+                printf("\n  >> Tienda: proximamente...\n");
+                break;
+            case 3:
+                printf("\n  >> Albumes: proximamente...\n");
+                break;
+            case 4:
+                laxos_leer("laxos.cfg");
+                break;
+            case 5:
+                printf("\n  >> Sistema: LaxOS v%s | %d nucleos | %d MB\n",
+                    LAXOS_VERSION, LAXOS_CPU_CORES, LAXOS_RAM_MB);
+                break;
+            case 6:
+                printf("\n  Apagando LaxOS...\n\n");
+                return;
+            default:
+                printf("\n  Opcion no valida\n");
+        }
+
+        printf("\n  Presiona Enter para continuar...");
+        getchar(); getchar();
     }
 }

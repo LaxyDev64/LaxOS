@@ -4,6 +4,7 @@
 
 #include <stdio.h>
 #include <string.h>
+#include "arch.h"
 
 #define LAXOS_VERSION   "0.8"
 #define LAXOS_RAM_MB    12288
