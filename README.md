@@ -31,7 +31,7 @@
 |-----------|---------|
 | CPU | 8 núcleos ARM Cortex-A78C |
 | RAM | 12288 MB LPDDR5X |
-| Arquitectura | ARM 64-bit-x86y64|
+| Arquitectura | ARM 64-bit-x86_64|
 | Lenguaje | C |
 
 ---
