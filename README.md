@@ -60,6 +60,11 @@ gcc main.c kernel.c memory.c process.c shell.c filesystem.c ui.c -o laxos && ./l
 | v0.1 | Primer arranque 
 ---
 
+## Fotos de la interfaz (alpha)
+<img width="856" height="512" alt="Captura de pantalla 2026-05-28 001040" src="https://github.com/user-attachments/assets/217e0938-36da-4a07-9e48-0e5785abf7e6" />
+<img width="1918" height="1026" alt="Captura de pantalla 2026-05-27 235308" src="https://github.com/user-attachments/assets/2bdfce2f-66e3-4533-ac9d-42a719be1e21" />
+
+---
 ## Creado y Desarrollado por LaxyDev64 and LaxStudios
 LaxStudio It's an indie studio created by LaxyDev64; studio Discord coming soon.
 Don't confuse it with anything else :)
