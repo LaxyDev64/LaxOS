@@ -17,7 +17,7 @@
 | — Shell | [██████████] 100% |
 | — Sistema de archivos | [██████████] 100% |
 | — Interfaz de usuario (terninal) | [██████████] 100% |   
-| — Interfaz interactiva | [░░░░░░░░░░]  00% |
+| — Interfaz interactiva | [█░░░░░░░░░]  01% |
 ---
 
 ##  Especificaciones objetivo
