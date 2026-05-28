@@ -3,7 +3,7 @@
 
 # LaxOS
 
-> Sistema operativo para consola inspirado en Nintendo Switch, desarrollado desde cero en C para arquitectura ARM.
+> Sistema operativo para consola inspirado en Nintendo Switch, desarrollado desde cero en C para arquitectura ARM y x86_64.
 
 ---
 ## Links
