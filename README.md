@@ -7,6 +7,11 @@
 
 ---
 
+<p align="center">
+  <a href="https://discord.gg/6UeZGESd"><img src="https://img.shields.io/discord/1072873391855501312?label=discord&logo=discord&color=5865F2" alt="Discord"/></a>
+</p>
+
+---
 ## Estado del proyecto
 
 | Módulo | Progreso |
