@@ -48,6 +48,7 @@ gcc main.c kernel.c memory.c process.c shell.c filesystem.c ui.c -o laxos && ./l
 
 | Versión | Descripción |
 |---------|-------------|
+| v0.8.1 | libreria de interfaz + fotos de la interfaz estan listas |
 | v0.8 | ¡LaxOS con interfaz completa! |
 | v0.7.3 | agregado mas arquitectora para mas consolas/pc |
 | v0.7.2 | sistema de archivos añadidos |
