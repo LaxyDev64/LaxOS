@@ -44,7 +44,7 @@
 
 ##  Especificaciones objetivo
 
-|| Componente | Detalle |
+| Componente | Detalle |
 |-----------|---------|
 | CPU | 8 núcleos ARM Cortex-A78C |
 | RAM | 12288 MB LPDDR5X |
