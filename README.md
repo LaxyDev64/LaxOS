@@ -24,10 +24,11 @@
 | Interfaz de usuario (terminal) | ██████████ 100% |
 | Interfaz gráfica SDL2 | ██░░░░░░░░ 20% |
 | Frontend de emuladores | ████░░░░░░ 40% |
-| Sistema de usuarios | ░░░░░░░░░░ 0% |
-| Guardar ROMs entre sesiones | ░░░░░░░░░░ 0% |
+| Sistema de usuarios | ██████████ 100% |
+| Guardar ROMs entre sesiones | ██████████ 100% |
 | Detección automática de emulador | ░░░░░░░░░░ 0% |
 | Apps nativas (Sonic Unleashed, etc.) | ░░░░░░░░░░ 0% |
+
 
 ---
 
