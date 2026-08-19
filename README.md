@@ -16,14 +16,31 @@
 
 | Módulo | Progreso |
 |--------|----------|
-| — Kernel base | [██████████] 100% |
-| — Gestión de memoria | [██████░░░░]  60% |
-| — Gestión de procesos | [████░░░░░░]  40% |
-| — Shell | [██████████] 100% |
-| — Sistema de archivos | [██████████] 100% |
-| — Interfaz de usuario (terninal) | [██████████] 100% |   
-| — Interfaz interactiva | [█░░░░░░░░░]  01% |
+| Kernel base | ██████████ 100% |
+| Gestión de memoria | ██████░░░░ 60% |
+| Gestión de procesos | ████░░░░░░ 40% |
+| Shell | ██████████ 100% |
+| Sistema de archivos | ██████████ 100% |
+| Interfaz de usuario (terminal) | ██████████ 100% |
+| Interfaz gráfica SDL2 | ██░░░░░░░░ 20% |
+| Frontend de emuladores | ████░░░░░░ 40% |
+| Sistema de usuarios | ░░░░░░░░░░ 0% |
+| Guardar ROMs entre sesiones | ░░░░░░░░░░ 0% |
+| Detección automática de emulador | ░░░░░░░░░░ 0% |
+| Apps nativas (Sonic Unleashed, etc.) | ░░░░░░░░░░ 0% |
+
 ---
+
+## Emuladores integrados (nuevo aun en desarollo)
+
+| Emulador | Consolas |
+|----------|---------|
+| DuckStation | PlayStation 1 |
+| Dolphin | GameCube / Wii |
+| PPSSPP | PSP |
+| Xenia | Xbox 360 |
+| RetroArch | NES, SNES, GBA, N64 y más |
+
 
 ##  Especificaciones objetivo
 
