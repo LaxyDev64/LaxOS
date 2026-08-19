@@ -86,7 +86,7 @@ gcc sdl_ui.c tinyfiledialogs.c users.c -o sdl_ui $(sdl2-config --cflags --libs) 
 ## Fotos de la interfaz (alpha)
 <img width="856" height="512" alt="Captura de pantalla 2026-05-28 001040" src="https://github.com/user-attachments/assets/217e0938-36da-4a07-9e48-0e5785abf7e6" />
 <img width="1918" height="1026" alt="Captura de pantalla 2026-05-27 235308" src="https://github.com/user-attachments/assets/2bdfce2f-66e3-4533-ac9d-42a719be1e21" />
----
+
 
 ## Fotos de la interfaz (prototipo)
 <img width="864" height="510" alt="Captura de pantalla 2026-08-19 134550" src="https://github.com/user-attachments/assets/dce2d326-bca2-4b83-ad2f-230ce284d307" />
