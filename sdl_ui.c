@@ -3,6 +3,7 @@
 #include <SDL2/SDL_image.h>
 #include <SDL2/SDL_ttf.h>
 #include "tinyfiledialogs.h"
+#include "users.h"
 #include <stdio.h>
 #include <time.h>
 #include <stdlib.h>
@@ -12,7 +13,6 @@
 #define ALTO     480
 #define MAX_ROMS 15
 
-// Rutas de emuladores
 const char* EMU_DUCKSTATION = "E:/duckstation/duckstation-qt-x64-ReleaseLTCG.exe";
 
 SDL_Texture* cargar(SDL_Renderer* r, const char* ruta) {
@@ -63,6 +63,28 @@ char* obtener_hora() {
 char roms[MAX_ROMS][256];
 int  num_roms = 0;
 
+void guardar_roms() {
+    FILE* f = fopen("roms.cfg", "w");
+    if (!f) return;
+    for (int i = 0; i < MAX_ROMS; i++)
+        if (strlen(roms[i]) > 0)
+            fprintf(f, "%d=%s\n", i, roms[i]);
+    fclose(f);
+    printf("ROMs guardadas\n");
+}
+
+void cargar_roms_guardadas() {
+    FILE* f = fopen("roms.cfg", "r");
+    if (!f) return;
+    int slot;
+    char ruta[256];
+    while (fscanf(f, "%d=%255[^\n]\n", &slot, ruta) == 2)
+        if (slot >= 0 && slot < MAX_ROMS)
+            strncpy(roms[slot], ruta, 255);
+    fclose(f);
+    printf("ROMs cargadas\n");
+}
+
 const char* detectar_emulador(const char* rom) {
     const char* ext = strrchr(rom, '.');
     if (!ext) return NULL;
@@ -87,36 +109,23 @@ void cargar_rom(int slot) {
         "*.gdi","*.cdi","*.pbp","*.cso",
         "*.zip","*.7z","*.rom","*.img"
     };
-
     const char* ruta = tinyfd_openFileDialog(
-        "LaxOS - Selecciona una ROM",
-        "",
-        30,
-        filtros,
-        "Archivos ROM (todas las consolas)",
-        0
+        "LaxOS - Selecciona una ROM", "", 30,
+        filtros, "Archivos ROM (todas las consolas)", 0
     );
-
     if (ruta) {
         strncpy(roms[slot], ruta, 255);
         if (slot >= num_roms) num_roms = slot + 1;
-        printf("ROM cargada en slot %d: %s\n", slot, roms[slot]);
+        guardar_roms();
     }
 }
 
 void lanzar_rom(int slot) {
-    if (strlen(roms[slot]) == 0) {
-        cargar_rom(slot);
-        return;
-    }
+    if (strlen(roms[slot]) == 0) { cargar_rom(slot); return; }
     const char* emu = detectar_emulador(roms[slot]);
-    if (!emu) {
-        printf("No hay emulador para esta ROM\n");
-        return;
-    }
+    if (!emu) { printf("No hay emulador para esta ROM\n"); return; }
     char cmd[512];
     sprintf(cmd, "\"%s\" \"%s\"", emu, roms[slot]);
-    printf("Lanzando: %s\n", cmd);
     system(cmd);
 }
 
@@ -157,6 +166,8 @@ int main(int argc, char* argv[]) {
     SDL_Color oscuro = {90,  90,  100, 255};
 
     memset(roms, 0, sizeof(roms));
+    users_cargar();
+    cargar_roms_guardadas();
 
     srand(42);
     int bx[18], by[18], br[18];
@@ -172,7 +183,11 @@ int main(int argc, char* argv[]) {
 
     while (corriendo) {
         while (SDL_PollEvent(&e)) {
-            if (e.type == SDL_QUIT) corriendo = 0;
+            if (e.type == SDL_QUIT) {
+                guardar_roms();
+                users_guardar();
+                corriendo = 0;
+            }
             if (e.type == SDL_KEYDOWN) {
                 switch (e.key.keysym.sym) {
                     case SDLK_RIGHT:  slot_sel = (slot_sel+1) % 15;    break;
@@ -180,7 +195,12 @@ int main(int argc, char* argv[]) {
                     case SDLK_DOWN:   slot_sel = (slot_sel+5) % 15;    break;
                     case SDLK_UP:     slot_sel = (slot_sel-5+15) % 15; break;
                     case SDLK_RETURN: lanzar_rom(slot_sel);             break;
-                    case SDLK_ESCAPE: corriendo = 0;                    break;
+                    case SDLK_s:      guardar_roms();                   break;
+                    case SDLK_ESCAPE:
+                        guardar_roms();
+                        users_guardar();
+                        corriendo = 0;
+                        break;
                 }
             }
         }
@@ -189,7 +209,7 @@ int main(int argc, char* argv[]) {
         SDL_SetRenderDrawColor(ren, 30, 30, 35, 255);
         SDL_RenderClear(ren);
 
-        // Burbujas circulares
+        // Burbujas
         for (int i = 0; i < 18; i++) {
             SDL_SetRenderDrawColor(ren, 48, 48, 55, 255);
             dibujar_circulo(ren, bx[i], by[i], br[i]);
@@ -200,11 +220,15 @@ int main(int argc, char* argv[]) {
         SDL_Rect topbar = {0, 0, ANCHO, 52};
         SDL_RenderFillRect(ren, &topbar);
 
-        // Logo
+        // Avatar con color del usuario
+        Usuario* u = users_actual();
+        SDL_SetRenderDrawColor(ren, u->color_r, u->color_g, u->color_b, 255);
+        dibujar_circulo(ren, 28, 26, 18);
         if (logo) {
             SDL_Rect lr = {10, 8, 36, 36};
             SDL_RenderCopy(ren, logo, NULL, &lr);
         }
+        dibujar_texto(ren, fuente_small, u->nombre, 52, 18, blanco);
 
         // Puntos de página
         for (int i = 0; i < 5; i++) {
@@ -283,13 +307,11 @@ int main(int argc, char* argv[]) {
             dibujar_texto(ren, fuente_small, labels[i], cx-18, cy+radio+3, gris);
         }
 
-        // Gamepad abajo izquierda
         dibujar_parte(ren, gamepad, 0, 0, 71, 96, 10, ALTO-52, 40, 40);
 
-        // Hint
         dibujar_texto(ren, fuente_small,
-            "Enter: cargar/lanzar ROM  |  Flechas: navegar  |  Esc: salir",
-            ANCHO/2-200, ALTO-14, oscuro);
+            "Enter: cargar/lanzar  |  S: guardar  |  Flechas: navegar  |  Esc: salir",
+            ANCHO/2-220, ALTO-14, oscuro);
 
         SDL_RenderPresent(ren);
         SDL_Delay(16);
