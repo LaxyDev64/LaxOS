@@ -44,19 +44,23 @@
 
 ##  Especificaciones objetivo
 
-| Componente | Detalle |
+|| Componente | Detalle |
 |-----------|---------|
 | CPU | 8 núcleos ARM Cortex-A78C |
 | RAM | 12288 MB LPDDR5X |
-| Arquitectura | ARM 64-bit-x86_64|
-| Lenguaje | C |
-
+| Arquitectura | ARM 64-bit + x86_64 |
+| Lenguaje | C + SDL2 |
+| Pantalla objetivo | Wii U Gamepad 6.2" |
 ---
 
 ## Cómo compilar
 
 ```bash
+# Kernel
 gcc main.c kernel.c memory.c process.c shell.c filesystem.c ui.c -o laxos && ./laxos
+
+# Interfaz gráfica
+gcc sdl_ui.c tinyfiledialogs.c users.c -o sdl_ui $(sdl2-config --cflags --libs) -lSDL2_image -lSDL2_ttf -lcomdlg32 -lole32 -luser32 && ./sdl_ui
 ```
 
 ---
