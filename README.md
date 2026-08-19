@@ -70,6 +70,7 @@ gcc sdl_ui.c tinyfiledialogs.c users.c -o sdl_ui $(sdl2-config --cflags --libs) 
 
 | Versión | Descripción |
 |---------|-------------|
+| v0.8.2 | sistema de usuarios completa + el guardado de roms |
 | v0.8.1 | libreria de interfaz + fotos de la interfaz estan listas |
 | v0.8 | ¡LaxOS con interfaz completa! |
 | v0.7.3 | agregado mas arquitectora para mas consolas/pc |
