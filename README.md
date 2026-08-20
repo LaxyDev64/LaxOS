@@ -19,29 +19,31 @@
 | Kernel base | ██████████ 100% |
 | Gestión de memoria | ██████░░░░ 60% |
 | Gestión de procesos | ████░░░░░░ 40% |
-| Shell | ██████████ 100% |
+| Shell interactiva | ██████████ 100% |
 | Sistema de archivos | ██████████ 100% |
-| Interfaz de usuario (terminal) | ██████████ 100% |
-| Interfaz gráfica SDL2 | ██░░░░░░░░ 20% |
-| Frontend de emuladores | ████░░░░░░ 40% |
+| Multi-arquitectura (ARM + x64) | ██████████ 100% |
 | Sistema de usuarios | ██████████ 100% |
+| Animación de arranque | ██████████ 100% |
+| Interfaz gráfica SDL2 | ████████░░ 80% |
+| Pantalla de ajustes | ██████████ 100% |
+| Frontend de emuladores | ██████░░░░ 60% |
 | Guardar ROMs entre sesiones | ██████████ 100% |
 | Detección automática de emulador | ░░░░░░░░░░ 0% |
-| Apps nativas (Sonic Unleashed, etc.) | ░░░░░░░░░░ 0% |
+| Dolphin / PPSSPP / Xenia | ░░░░░░░░░░ 0% |
+| Apps nativas | ░░░░░░░░░░ 0% |
 
 
 ---
 
 ## Emuladores integrados (nuevo aun en desarollo)
 
-| Emulador | Consolas |
-|----------|---------|
-| DuckStation | PlayStation 1 |
-| Dolphin | GameCube / Wii |
-| PPSSPP | PSP |
-| Xenia | Xbox 360 |
-| RetroArch | NES, SNES, GBA, N64 y más |
-
+| Emulador | Consolas | Estado |
+|----------|---------|--------|
+| DuckStation | PlayStation 1 |  Integrado |
+| Dolphin | GameCube / Wii | Próximamente |
+| PPSSPP | PSP | Próximamente |
+| Xenia | Xbox 360 | Próximamente |
+| RetroArch | NES, SNES, GBA, N64... | Próximamente |
 
 ##  Especificaciones objetivo
 
@@ -70,6 +72,7 @@ gcc sdl_ui.c tinyfiledialogs.c users.c -o sdl_ui $(sdl2-config --cflags --libs) 
 
 | Versión | Descripción |
 |---------|-------------|
+| v0.8.3 | animación arranque + ajustes |
 | v0.8.2 | sistema de usuarios completa + el guardado de roms |
 | v0.8.1 | libreria de interfaz + fotos de la interfaz estan listas |
 | v0.8 | ¡LaxOS con interfaz completa! |
@@ -91,6 +94,15 @@ gcc sdl_ui.c tinyfiledialogs.c users.c -o sdl_ui $(sdl2-config --cflags --libs) 
 
 ## Fotos de la interfaz (prototipo)
 <img width="864" height="510" alt="Captura de pantalla 2026-08-19 134550" src="https://github.com/user-attachments/assets/dce2d326-bca2-4b83-ad2f-230ce284d307" />
+---
+
+##  Próximos pasos
+
+- [ ] Detección automática de emulador por extensión
+- [ ] Conectar Dolphin, PPSSPP y Xenia
+- [ ] Soporte para apps nativas (Sonic Unleashed Recompiled)
+- [ ] Completar pantalla de ajustes
+- [ ] Port al Wii U Gamepad
 
 ---
 ## Creado y Desarrollado por LaxyDev64 and LaxStudios
